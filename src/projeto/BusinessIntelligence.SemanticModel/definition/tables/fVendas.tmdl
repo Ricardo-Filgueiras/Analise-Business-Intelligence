@@ -1,0 +1,117 @@
+table fVendas
+	lineageTag: 11e010e0-0b61-44de-8f00-cabd0cf6c0c7
+
+	column Venda_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 30a880cd-8174-4bef-89da-696603a90691
+		summarizeBy: none
+		sourceColumn: Venda_ID
+
+		annotation SummarizationSetBy = User
+
+	column Loja_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 59fda591-ecb7-4fe3-b0b2-cd0211a0b025
+		summarizeBy: none
+		sourceColumn: Loja_ID
+
+		annotation SummarizationSetBy = User
+
+	column Produto_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: eb77586f-9e9b-4a65-bcbe-50b60ba1d4a9
+		summarizeBy: none
+		sourceColumn: Produto_ID
+
+		annotation SummarizationSetBy = User
+
+	column Cliente_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8aa20900-6edf-4c4c-abcd-06feccb4c9fb
+		summarizeBy: none
+		sourceColumn: Cliente_ID
+
+		annotation SummarizationSetBy = User
+
+	column Colaborador_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ff6013a-5de5-49a2-bc46-a255598aa81a
+		summarizeBy: none
+		sourceColumn: Colaborador_ID
+
+		annotation SummarizationSetBy = User
+
+	column Quantidade
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ccd419d-507b-4030-969a-13c03e5fd5c6
+		summarizeBy: none
+		sourceColumn: Quantidade
+
+		annotation SummarizationSetBy = User
+
+	column 'Preço Unitário'
+		dataType: decimal
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: a6e1eb2d-557d-4235-acad-50a10b7fc3e9
+		summarizeBy: none
+		sourceColumn: Preço Unitário
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Canal de Venda'
+		dataType: string
+		lineageTag: b47046f9-005f-477d-bdfa-21226425ec35
+		summarizeBy: none
+		sourceColumn: Canal de Venda
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataVenda
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 06d49bd2-6b96-4b36-857a-63fb65880be1
+		summarizeBy: none
+		sourceColumn: DataVenda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HoraVenda
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: b01c373c-9a63-46c1-920c-e52e85d0bd5e
+		summarizeBy: none
+		sourceColumn: HoraVenda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition fVendas = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Analise-Business-Intelligence/refs/heads/main/src/dados/Vendas.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Promoted Headers", {{"Preço Unitário", Currency.Type}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type with Locale",{{"Venda_ID", Int64.Type}, {"Loja_ID", Int64.Type}, {"Produto_ID", Int64.Type}, {"Cliente_ID", Int64.Type}, {"Colaborador_ID", Int64.Type}, {"Quantidade", Int64.Type}, {"Data da Venda", type datetime}, {"Canal de Venda", type text}}),
+				    #"Inserted Time" = Table.AddColumn(#"Changed Type", "Hora", each DateTime.Time([Data da Venda]), type time),
+				    #"Extracted Date" = Table.TransformColumns(#"Inserted Time",{{"Data da Venda", DateTime.Date, type date}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Extracted Date",{"Venda_ID", "Loja_ID", "Produto_ID", "Cliente_ID", "Colaborador_ID", "Quantidade", "Preço Unitário", "Canal de Venda", "Data da Venda", "Hora"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"Data da Venda", "DataVenda"}, {"Hora", "HoraVenda"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

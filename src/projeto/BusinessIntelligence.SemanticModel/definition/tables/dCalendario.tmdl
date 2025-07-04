@@ -1,0 +1,85 @@
+table dCalendario
+	lineageTag: 88f9783e-97d4-460d-81e5-bd92dd6de6e9
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Long Date
+		lineageTag: 9a5ddc1c-40ce-4d2f-9b0e-9a2c91a90fe6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ANOMES
+		lineageTag: 89aba017-50fe-485d-a9d1-01cc54c80c22
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ANOMES]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes/Ano
+		lineageTag: 80ce9d3f-8904-4ca6-bd58-a8389dd28f01
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes/Ano]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Mes'
+		lineageTag: 30d26cbf-1ffa-4924-8a02-9779317e63e7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Nome do Mes]
+		sortByColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		formatString: 0
+		lineageTag: ff842317-a9ad-4717-8416-ef827b82bae8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Ano]
+
+		annotation SummarizationSetBy = User
+
+	column Mes
+		formatString: 0
+		lineageTag: daa7e258-9102-4312-ac1a-b6356a314f10
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+
+		annotation SummarizationSetBy = User
+
+	column Dia
+		formatString: 0
+		lineageTag: bee6e8cd-207c-475c-9915-ccad28e2afdb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia]
+
+		annotation SummarizationSetBy = User
+
+	partition dCalendario = calculated
+		mode: import
+		source = ```
+				
+				 ADDCOLUMNS(
+				     CALENDAR(MIN(fVendas[DataVenda]),MAX(fVendas[DataVenda])),
+				     "ANOMES", FORMAT([Date], "YYYYmm"),
+				     "Mes/Ano", FORMAT([Date], "MMM/YY"),
+				     "Nome do Mes", FORMAT([Date], "MMM"),
+				     "Ano", YEAR([Date]),
+				     "Mes", MONTH([Date]),
+				     "Dia", DAY([Date])
+				     )
+				```
+
+	annotation PBI_Id = a5869838eeef4c85827297878da2c5c7
+

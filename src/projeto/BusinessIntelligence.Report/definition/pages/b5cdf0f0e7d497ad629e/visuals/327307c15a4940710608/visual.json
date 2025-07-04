@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "327307c15a4940710608",
+  "position": {
+    "x": 32.222222222222221,
+    "y": 134.44444444444443,
+    "z": 0,
+    "height": 103.33333333333333,
+    "width": 287.77777777777777
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fVendas"
+                    }
+                  },
+                  "Property": "Canal de Venda"
+                }
+              },
+              "queryRef": "fVendas.Canal de Venda",
+              "nativeQueryRef": "Canal de Venda"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "faturamento"
+                }
+              },
+              "queryRef": "Medidas.faturamento",
+              "nativeQueryRef": "faturamento"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a77baf05540145cc9606",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fVendas"
+              }
+            },
+            "Property": "Canal de Venda"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef76c4320d108000814a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "faturamento"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

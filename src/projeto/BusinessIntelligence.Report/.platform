@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "BusinessIntelligence"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7974b30a-04ef-4be2-98d4-eef2378fad3d"
+  }
+}
