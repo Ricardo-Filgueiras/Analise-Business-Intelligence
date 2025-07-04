@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 907,
-            "y": 59
+            "y": 66.5
           },
           "nodeIndex": "dHora",
           "nodeLineageTag": "48731a25-a30a-468d-865c-07daad973b57",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 541,
-            "y": 403
+            "y": 410.5
           },
           "nodeIndex": "fVendas",
           "nodeLineageTag": "11e010e0-0b61-44de-8f00-cabd0cf6c0c7",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 502,
-            "y": 15
+            "y": 22.5
           },
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "88f9783e-97d4-460d-81e5-bd92dd6de6e9",
@@ -46,10 +46,75 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "8714e66e-a7e8-4f65-95dd-41d8bee6af7d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1218.6020229710421,
+            "y": 90.322515007144148
+          },
+          "nodeIndex": "dVendedor",
+          "nodeLineageTag": "4912122d-431e-4847-a272-59351ed8bc52",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1471,
+            "y": 255.25
+          },
+          "nodeIndex": "fCustosOperacionais",
+          "nodeLineageTag": "81140c18-e18a-40ea-8dcd-12e01303efd4",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 845.60204187964314,
+            "y": 799.147121518623
+          },
+          "nodeIndex": "dClientes",
+          "nodeLineageTag": "c07f88b0-fc2b-46e1-a0df-2d69d46d09b9",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2035,
+            "y": 219.25
+          },
+          "nodeIndex": "fDevolucoes",
+          "nodeLineageTag": "3a375701-99a7-4fc3-bd24-a44f1612313c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas as tabelas",
-      "zoomValue": 100,
+      "zoomValue": 63.287087723234038,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "e173f6dc3ecd163b1572",
+  "position": {
+    "x": 0,
+    "y": 555.223880597015,
+    "z": 7,
+    "height": 164.77611940298507,
+    "width": 526.56716417910445
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dClientes"
+                    }
+                  },
+                  "Property": "Cidade"
+                }
+              },
+              "queryRef": "dClientes.Cidade",
+              "nativeQueryRef": "Cidade"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fVendas"
+                        }
+                      },
+                      "Property": "Quantidade"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fVendas.Quantidade)",
+              "nativeQueryRef": "Soma de Quantidade1"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fVendas"
+                        }
+                      },
+                      "Property": "Quantidade"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(fVendas.Quantidade)",
+              "nativeQueryRef": "Média de Quantidade"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fVendas"
+                        }
+                      },
+                      "Property": "Quantidade"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "fVendas.Quantidade",
+              "nativeQueryRef": "Mínimo de Quantidade"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fVendas"
+                        }
+                      },
+                      "Property": "Quantidade"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "fVendas.Quantidade1",
+              "nativeQueryRef": "Máximo de Quantidade"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "fVendas"
+                      }
+                    },
+                    "Property": "Quantidade"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.999984921831D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fVendas.Quantidade"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.47759126551281D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Avg(fVendas.Quantidade)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.7462780322835D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(fVendas.Quantidade)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.26863554980412D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fVendas.Quantidade1"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

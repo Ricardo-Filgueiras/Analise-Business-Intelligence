@@ -1,8 +1,20 @@
+relationship 4c290c12-6f3e-1430-2523-769394ca4491
+	fromColumn: fVendas.HoraVenda
+	toColumn: dHora.Hora
+
 relationship becf91fc-0698-e8f8-cc07-8ab0cb058563
 	fromColumn: fVendas.DataVenda
 	toColumn: dCalendario.Date
 
-relationship 4c290c12-6f3e-1430-2523-769394ca4491
-	fromColumn: fVendas.HoraVenda
-	toColumn: dHora.Hora
+relationship AutoDetected_7e9c23db-665c-49cc-be1c-b60e2308d16e
+	fromColumn: fVendas.Colaborador_ID
+	toColumn: dVendedor.Colaborador_ID
+
+relationship AutoDetected_e4862e0d-d5b7-4b31-a161-5854a5198cdc
+	fromColumn: fVendas.Cliente_ID
+	toColumn: dClientes.Cliente_ID
+
+relationship AutoDetected_c5aeb2ed-ba0b-4e12-adc7-48724b0513e0
+	fromColumn: fCustosOperacionais.Loja_ID
+	toColumn: Lojas.Loja_ID
 

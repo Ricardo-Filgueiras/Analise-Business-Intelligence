@@ -1,0 +1,57 @@
+table Lojas
+	lineageTag: b8854b57-51f8-4c2d-ae2f-3529c4f0edc2
+
+	column Loja_ID
+		dataType: string
+		lineageTag: 611340ef-3582-48a5-9f3d-bda8cd8f6f79
+		summarizeBy: none
+		sourceColumn: Loja_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		dataType: string
+		lineageTag: 80802537-cc6d-4185-8b2d-ed95b584cddf
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Região
+		dataType: string
+		lineageTag: 92299bab-fe0a-4deb-b20f-aa5f26a47e1b
+		summarizeBy: none
+		sourceColumn: Região
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		dataType: string
+		lineageTag: 4f581b50-5ee9-44f0-9ee6-3c5ed8908836
+		summarizeBy: none
+		sourceColumn: Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		lineageTag: 03c463f1-ff23-49fd-ba48-97801664d5ca
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Lojas = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Analise-Business-Intelligence/refs/heads/main/src/dados/Lojas.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

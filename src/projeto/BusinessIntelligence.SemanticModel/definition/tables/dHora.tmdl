@@ -74,6 +74,7 @@ table dHora
 
 	partition dHora = m
 		mode: import
+		queryGroup: Dimensões
 		source = ```
 				let
 				    Lista = {0..86399},

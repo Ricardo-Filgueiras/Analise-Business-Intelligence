@@ -1,0 +1,67 @@
+table fCustosOperacionais
+	lineageTag: 81140c18-e18a-40ea-8dcd-12e01303efd4
+
+	column Custo_ID
+		dataType: string
+		lineageTag: 4ac62eb5-489e-4240-9604-61a7a2064f42
+		summarizeBy: none
+		sourceColumn: Custo_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Loja_ID
+		dataType: string
+		lineageTag: 7f1bb6cc-ebb3-4387-9dac-5340f0b63f0c
+		summarizeBy: none
+		sourceColumn: Loja_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de Custo'
+		dataType: string
+		lineageTag: 610952a0-4f2d-49ef-993e-6672bda56efd
+		summarizeBy: none
+		sourceColumn: Tipo de Custo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Mensal'
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: d168bea1-6cfd-4e17-b6d1-5df2257f6f3f
+		summarizeBy: sum
+		sourceColumn: Valor Mensal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fa834aa0-1744-4246-8db1-e511f3183d5c
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition fCustosOperacionais = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Analise-Business-Intelligence/refs/heads/main/src/dados/Custos_Operacionais.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Promoted Headers", {{"Valor Mensal", Currency.Type}}, "en-US"),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type with Locale", each true),
+				    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Filtered Rows", {{"Data", each Text.BeforeDelimiter(_, " "), type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Text Before Delimiter",{{"Data", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

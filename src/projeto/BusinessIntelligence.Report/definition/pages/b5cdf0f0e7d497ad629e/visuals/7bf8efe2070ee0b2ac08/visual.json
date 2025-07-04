@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "327307c15a4940710608",
+  "name": "7bf8efe2070ee0b2ac08",
   "position": {
-    "x": 32.238805970149251,
+    "x": 304.47761194029852,
     "y": 43.880597014925371,
-    "z": 0,
-    "height": 103.88059701492537,
-    "width": 272.23880597014926
+    "z": 5,
+    "height": 190.74626865671641,
+    "width": 282.08955223880594
   },
   "visual": {
     "visualType": "tableEx",
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fVendas"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "Canal de Venda"
+                  "Property": "DiaSemana"
                 }
               },
-              "queryRef": "fVendas.Canal de Venda",
-              "nativeQueryRef": "Canal de Venda"
+              "queryRef": "dCalendario.DiaSemana",
+              "nativeQueryRef": "DiaSemana"
             },
             {
               "field": {
@@ -51,21 +51,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a77baf05540145cc9606",
+        "name": "8bee9a5eebe8a5e0618e",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "fVendas"
+                "Entity": "dCalendario"
               }
             },
-            "Property": "Canal de Venda"
+            "Property": "DiaSemana"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "ef76c4320d108000814a",
+        "name": "9b7aac9ec5c81e04305d",
         "field": {
           "Measure": {
             "Expression": {

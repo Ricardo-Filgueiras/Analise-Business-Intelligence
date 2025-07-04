@@ -6,11 +6,19 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
+queryGroup Fatos
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Dimensões
+
+	annotation PBI_QueryGroupOrder = 1
+
 annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBIDesktopVersion = 2.144.679.0 (25.06)+ef40146207b86a826d1c72a7727a743ee37450e9
 
-annotation PBI_QueryOrder = ["fVendas","dHora","Medidas"]
+annotation PBI_QueryOrder = ["fVendas","fCustosOperacionais","fDevolucoes","dClientes","dVendedor","dHora","Medidas","Lojas"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -18,6 +26,11 @@ ref table fVendas
 ref table dHora
 ref table dCalendario
 ref table Medidas
+ref table fCustosOperacionais
+ref table dVendedor
+ref table fDevolucoes
+ref table dClientes
+ref table Lojas
 
 ref cultureInfo pt-BR
 

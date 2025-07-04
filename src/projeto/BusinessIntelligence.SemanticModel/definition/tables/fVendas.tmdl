@@ -98,6 +98,7 @@ table fVendas
 
 	partition fVendas = m
 		mode: import
+		queryGroup: Fatos
 		source =
 				let
 				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Analise-Business-Intelligence/refs/heads/main/src/dados/Vendas.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),

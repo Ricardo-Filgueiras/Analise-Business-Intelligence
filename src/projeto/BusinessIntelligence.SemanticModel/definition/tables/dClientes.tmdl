@@ -1,0 +1,88 @@
+table dClientes
+	lineageTag: c07f88b0-fc2b-46e1-a0df-2d69d46d09b9
+
+	column Cliente_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 991dee69-5a66-4340-a49b-7ee9e1082681
+		summarizeBy: none
+		sourceColumn: Cliente_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		dataType: string
+		lineageTag: 89c44821-7f48-409c-805f-df8d232a4a3d
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idade
+		dataType: int64
+		formatString: 0
+		lineageTag: 8235b55c-51f3-4a38-89e2-ac45661f0485
+		summarizeBy: none
+		sourceColumn: Idade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Género
+		dataType: string
+		lineageTag: ecc0eb19-a6b6-4168-9e37-5cd31998f6e2
+		summarizeBy: none
+		sourceColumn: Género
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		dataType: string
+		lineageTag: f7ead95c-b9e4-473a-9b60-3e00a45c8ae5
+		summarizeBy: none
+		sourceColumn: Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Canal de Compra'
+		dataType: string
+		lineageTag: 2148174b-890f-47fd-a228-8cea62ef0890
+		summarizeBy: none
+		sourceColumn: Canal de Compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total de Compras'
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: e4c2b436-c148-4d90-b8fc-25c844577d53
+		summarizeBy: none
+		sourceColumn: Total de Compras
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Imagem
+		dataType: string
+		lineageTag: 6b6f7cd1-a6d4-4e4d-a43f-a85e09d93c91
+		summarizeBy: none
+		sourceColumn: Imagem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dClientes = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Analise-Business-Intelligence/refs/heads/main/src/dados/Clientes.csv"),[Delimiter=",", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Cliente_ID", Int64.Type}, {"Nome", type text}, {"Idade", Int64.Type}, {"Género", type text}, {"Cidade", type text}, {"Canal de Compra", type text}, {"Imagem", type text}}),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Changed Type", {{"Total de Compras", Currency.Type}}, "en-US")
+				in
+				    #"Changed Type with Locale"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

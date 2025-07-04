@@ -66,6 +66,14 @@ table dCalendario
 
 		annotation SummarizationSetBy = User
 
+	column DiaSemana
+		lineageTag: 033f8f83-ec31-4e1e-9e1a-182f69bb0176
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DiaSemana]
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dCalendario = calculated
 		mode: import
 		source = ```
@@ -77,7 +85,8 @@ table dCalendario
 				     "Nome do Mes", FORMAT([Date], "MMM"),
 				     "Ano", YEAR([Date]),
 				     "Mes", MONTH([Date]),
-				     "Dia", DAY([Date])
+				     "Dia", DAY([Date]),
+				     "DiaSemana", FORMAT( [Date] , "dddd" )
 				     )
 				```
 

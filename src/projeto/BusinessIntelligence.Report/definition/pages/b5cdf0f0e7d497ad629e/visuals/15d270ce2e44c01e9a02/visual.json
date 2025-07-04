@@ -1,15 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "1f0ce92ac95796c0c699",
+  "name": "15d270ce2e44c01e9a02",
   "position": {
-    "x": 304.47761194029852,
-    "y": 236.41791044776119,
-    "z": 2,
-    "height": 205.07462686567163,
-    "width": 654.62686567164178
+    "x": 0,
+    "y": 439.70149253731341,
+    "z": 8,
+    "height": 97.611940298507463,
+    "width": 526.56716417910445,
+    "tabOrder": 1
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "pieChart",
     "query": {
       "queryState": {
         "Category": {
@@ -19,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dClientes"
                     }
                   },
-                  "Property": "Nome do Mes"
+                  "Property": "Género"
                 }
               },
-              "queryRef": "dCalendario.Nome do Mes",
-              "nativeQueryRef": "Nome do Mes",
+              "queryRef": "dClientes.Género",
+              "nativeQueryRef": "Género",
               "active": true
             }
           ]
@@ -54,52 +55,43 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "dCalendario"
+                    "Entity": "Medidas"
                   }
                 },
-                "Property": "Nome do Mes"
+                "Property": "faturamento"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6ff41de9227602b3a860",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "faturamento"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "75ae32d505750a079091",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendario"
-              }
-            },
-            "Property": "Nome do Mes"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

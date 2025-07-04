@@ -1,4 +1,4 @@
-
+# Análise de Business Intelligence (BI), visualização de dados, aplicações na pratica.
 
 Para obter os dados e projeto completo siga as etapas a seguir.
 
@@ -10,3 +10,10 @@ Para obter os dados e projeto completo siga as etapas a seguir.
 git clone https://github.com/Ricardo-Filgueiras/Analise-Business-Intelligence.git
 
 ```
+
+Sobre o Conjuto de dados 
+
+Retail Business Intelligence Dataset
+Vendas de lojas de roupa fictícias e campanhas de marketing
+
+por : Henrique Guimarães => [Kaggle](https://www.kaggle.com/guimacrlh)

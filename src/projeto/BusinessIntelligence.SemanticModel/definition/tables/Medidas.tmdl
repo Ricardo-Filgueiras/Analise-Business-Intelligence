@@ -13,6 +13,10 @@ table Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
+	measure 'Qtde Venda' = DISTINCTCOUNT( fVendas[Venda_ID] )
+		formatString: 0
+		lineageTag: 78d7a339-46ed-4648-88df-6a66c397a565
+
 	column 'Coluna 1'
 		dataType: string
 		isHidden
