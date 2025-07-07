@@ -1,4 +1,4 @@
-table Lojas
+table dLojas
 	lineageTag: b8854b57-51f8-4c2d-ae2f-3529c4f0edc2
 
 	column Loja_ID
@@ -41,7 +41,7 @@ table Lojas
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Lojas = m
+	partition dLojas = m
 		mode: import
 		queryGroup: Dimensões
 		source =
@@ -50,6 +50,8 @@ table Lojas
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
 				in
 				    #"Promoted Headers"
+
+	changedProperty = Name
 
 	annotation PBI_NavigationStepName = Navigation
 

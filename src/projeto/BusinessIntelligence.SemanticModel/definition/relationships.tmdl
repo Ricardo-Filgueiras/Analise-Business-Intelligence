@@ -16,5 +16,5 @@ relationship AutoDetected_e4862e0d-d5b7-4b31-a161-5854a5198cdc
 
 relationship AutoDetected_c5aeb2ed-ba0b-4e12-adc7-48724b0513e0
 	fromColumn: fCustosOperacionais.Loja_ID
-	toColumn: Lojas.Loja_ID
+	toColumn: dLojas.Loja_ID
 

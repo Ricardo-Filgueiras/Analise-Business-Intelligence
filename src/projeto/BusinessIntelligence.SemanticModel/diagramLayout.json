@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 907,
-            "y": 66.5
+            "x": 899.09949425723948,
+            "y": 99.682124119594235
           },
           "nodeIndex": "dHora",
           "nodeLineageTag": "48731a25-a30a-468d-865c-07daad973b57",
@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 541,
-            "y": 410.5
+            "x": 537.83979770289579,
+            "y": 756.54215153291125
           },
           "nodeIndex": "fVendas",
           "nodeLineageTag": "11e010e0-0b61-44de-8f00-cabd0cf6c0c7",
@@ -36,8 +36,8 @@
         },
         {
           "location": {
-            "x": 502,
-            "y": 22.5
+            "x": 459.33726898909322,
+            "y": 13.01939310868736
           },
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "88f9783e-97d4-460d-81e5-bd92dd6de6e9",
@@ -62,8 +62,8 @@
         },
         {
           "location": {
-            "x": 1218.6020229710421,
-            "y": 90.322515007144148
+            "x": 1175.9392919601353,
+            "y": 101.3832230470089
           },
           "nodeIndex": "dVendedor",
           "nodeLineageTag": "4912122d-431e-4847-a272-59351ed8bc52",
@@ -75,8 +75,8 @@
         },
         {
           "location": {
-            "x": 1471,
-            "y": 255.25
+            "x": 1322.4704920361021,
+            "y": 926.792988134645
           },
           "nodeIndex": "fCustosOperacionais",
           "nodeLineageTag": "81140c18-e18a-40ea-8dcd-12e01303efd4",
@@ -88,8 +88,8 @@
         },
         {
           "location": {
-            "x": 845.60204187964314,
-            "y": 799.147121518623
+            "x": 1738.3591908115832,
+            "y": 107.06281845280046
           },
           "nodeIndex": "dClientes",
           "nodeLineageTag": "c07f88b0-fc2b-46e1-a0df-2d69d46d09b9",
@@ -101,13 +101,26 @@
         },
         {
           "location": {
-            "x": 2035,
-            "y": 219.25
+            "x": 1053.7571867491422,
+            "y": 927.13531455134364
           },
           "nodeIndex": "fDevolucoes",
           "nodeLineageTag": "3a375701-99a7-4fc3-bd24-a44f1612313c",
           "size": {
             "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1452.26474878012,
+            "y": 105.33242071192129
+          },
+          "nodeIndex": "dLojas",
+          "nodeLineageTag": "b8854b57-51f8-4c2d-ae2f-3529c4f0edc2",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0

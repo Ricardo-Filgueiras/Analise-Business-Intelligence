@@ -1,60 +1,82 @@
 table fDevolucoes
+	isHidden
 	lineageTag: 3a375701-99a7-4fc3-bd24-a44f1612313c
 
 	column Devolução_ID
 		dataType: string
+		isHidden
 		lineageTag: 1edcf044-5300-4414-8f8c-8b902faada55
 		summarizeBy: none
 		sourceColumn: Devolução_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Venda_ID
 		dataType: string
+		isHidden
 		lineageTag: 6af8d759-9338-48ae-a914-47c5b2fedb85
 		summarizeBy: none
 		sourceColumn: Venda_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Produto_ID
 		dataType: string
+		isHidden
 		lineageTag: 59cd7227-0717-4519-8be6-b741600a03d8
 		summarizeBy: none
 		sourceColumn: Produto_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Cliente_ID
 		dataType: string
+		isHidden
 		lineageTag: 82a2162c-c900-4a88-8290-4ed318240871
 		summarizeBy: none
 		sourceColumn: Cliente_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Quantidade
 		dataType: string
+		isHidden
 		lineageTag: 3bca6cbc-6471-411d-9d54-41c3c4aef88f
 		summarizeBy: none
 		sourceColumn: Quantidade
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Motivo da Devolução'
 		dataType: string
+		isHidden
 		lineageTag: 24822892-ebf3-4910-9eb3-b75b405c635c
 		summarizeBy: none
 		sourceColumn: Motivo da Devolução
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column DataDevolução
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: d7fe7c13-a7f9-43b9-8be6-d0b87461341c
 		summarizeBy: none
 		sourceColumn: DataDevolução
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -62,10 +84,13 @@ table fDevolucoes
 
 	column HoraDevolução
 		dataType: dateTime
+		isHidden
 		formatString: Long Time
 		lineageTag: 2649c609-ce36-435c-9c93-a107ab518c56
 		summarizeBy: none
 		sourceColumn: HoraDevolução
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -83,6 +108,8 @@ table fDevolucoes
 				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"DataDevolução", type date}, {"HoraDevolução", type time}})
 				in
 				    #"Changed Type1"
+
+	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 

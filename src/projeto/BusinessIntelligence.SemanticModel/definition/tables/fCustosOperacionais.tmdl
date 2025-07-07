@@ -1,36 +1,49 @@
 table fCustosOperacionais
+	isHidden
 	lineageTag: 81140c18-e18a-40ea-8dcd-12e01303efd4
 
 	column Custo_ID
 		dataType: string
+		isHidden
 		lineageTag: 4ac62eb5-489e-4240-9604-61a7a2064f42
 		summarizeBy: none
 		sourceColumn: Custo_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Loja_ID
 		dataType: string
+		isHidden
 		lineageTag: 7f1bb6cc-ebb3-4387-9dac-5340f0b63f0c
 		summarizeBy: none
 		sourceColumn: Loja_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Tipo de Custo'
 		dataType: string
+		isHidden
 		lineageTag: 610952a0-4f2d-49ef-993e-6672bda56efd
 		summarizeBy: none
 		sourceColumn: Tipo de Custo
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Valor Mensal'
 		dataType: decimal
+		isHidden
 		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
 		lineageTag: d168bea1-6cfd-4e17-b6d1-5df2257f6f3f
 		summarizeBy: sum
 		sourceColumn: Valor Mensal
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -38,10 +51,13 @@ table fCustosOperacionais
 
 	column Data
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: fa834aa0-1744-4246-8db1-e511f3183d5c
 		summarizeBy: none
 		sourceColumn: Data
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -60,6 +76,8 @@ table fCustosOperacionais
 				    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Text Before Delimiter",{{"Data", type date}})
 				in
 				    #"Changed Type"
+
+	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 
