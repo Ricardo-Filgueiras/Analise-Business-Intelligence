@@ -18,3 +18,11 @@ relationship AutoDetected_c5aeb2ed-ba0b-4e12-adc7-48724b0513e0
 	fromColumn: fCustosOperacionais.Loja_ID
 	toColumn: dLojas.Loja_ID
 
+relationship AutoDetected_ffb84664-f8a6-4f0b-b0e5-9295bcdbacb4
+	fromColumn: fVendas.Produto_ID
+	toColumn: dProdutos.Produto_ID
+
+relationship 8532633a-82cb-899e-01ab-8fd6e5496011
+	fromColumn: fVendas.Loja_ID
+	toColumn: dLojas.Loja_ID
+

@@ -1,0 +1,93 @@
+table dProdutos
+	lineageTag: 28f7dfc5-d7c0-451e-94e0-2440ea621f9f
+
+	column Produto_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a32c656-38bf-4859-9075-c03845ec5bed
+		summarizeBy: none
+		sourceColumn: Produto_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		dataType: string
+		lineageTag: 460686b9-5026-43f5-9636-02753656d219
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		lineageTag: c94294fe-2712-4f30-81f0-b7cebd1fb7b2
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cor
+		dataType: string
+		lineageTag: 36871d20-839a-4528-9a4a-f66f5f43be02
+		summarizeBy: none
+		sourceColumn: Cor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descrição
+		dataType: string
+		lineageTag: 316adbc7-3827-46da-ae13-7dc7b8ce4543
+		summarizeBy: none
+		sourceColumn: Descrição
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tamanho
+		dataType: string
+		lineageTag: 3211b09a-a4ed-4997-bdfa-d1753dc8791c
+		summarizeBy: none
+		sourceColumn: Tamanho
+
+		annotation SummarizationSetBy = Automatic
+
+	column Preço
+		dataType: int64
+		formatString: 0
+		lineageTag: acf34cdf-833f-4423-a1c7-d419514ac348
+		summarizeBy: none
+		sourceColumn: Preço
+
+		annotation SummarizationSetBy = Automatic
+
+	column Custo_Aquisição
+		dataType: int64
+		formatString: 0
+		lineageTag: 85a6df64-ef7c-43a7-b346-6e30f5f5862b
+		summarizeBy: none
+		sourceColumn: Custo_Aquisição
+
+		annotation SummarizationSetBy = Automatic
+
+	column Imagem
+		dataType: string
+		lineageTag: 5e179936-6d71-457b-93d5-dca60253e896
+		summarizeBy: none
+		sourceColumn: Imagem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dProdutos = m
+		mode: import
+		queryGroup: Dimensões
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Analise-Business-Intelligence/refs/heads/main/src/dados/Produtos.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Produto_ID", Int64.Type}, {"Nome", type text}, {"Categoria", type text}, {"Cor", type text}, {"Descrição", type text}, {"Tamanho", type text}, {"Preço", Int64.Type}, {"Custo_Aquisição", Int64.Type}, {"Imagem", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

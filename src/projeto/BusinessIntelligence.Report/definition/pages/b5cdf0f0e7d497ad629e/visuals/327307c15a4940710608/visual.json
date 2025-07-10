@@ -36,7 +36,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "faturamento"
+                  "Property": "Faturamento"
                 }
               },
               "queryRef": "Medidas.faturamento",
@@ -73,7 +73,7 @@
                 "Entity": "Medidas"
               }
             },
-            "Property": "faturamento"
+            "Property": "Faturamento"
           }
         },
         "type": "Advanced"

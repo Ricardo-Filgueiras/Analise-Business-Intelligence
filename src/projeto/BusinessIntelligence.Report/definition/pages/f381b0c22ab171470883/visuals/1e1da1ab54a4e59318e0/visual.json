@@ -1,38 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "15d270ce2e44c01e9a02",
+  "name": "1e1da1ab54a4e59318e0",
   "position": {
-    "x": 0,
-    "y": 439.70149253731341,
-    "z": 8,
-    "height": 97.611940298507463,
-    "width": 526.56716417910445,
-    "tabOrder": 1
+    "x": 320.5,
+    "y": 102,
+    "z": 3000,
+    "height": 75,
+    "width": 270
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dClientes"
-                    }
-                  },
-                  "Property": "Género"
-                }
-              },
-              "queryRef": "dClientes.Género",
-              "nativeQueryRef": "Género",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -42,11 +22,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Faturamento"
+                  "Property": "Qtde Venda"
                 }
               },
-              "queryRef": "Medidas.faturamento",
-              "nativeQueryRef": "faturamento"
+              "queryRef": "Medidas.Qtde Venda",
+              "nativeQueryRef": "Qtde Venda"
             }
           ]
         }
@@ -61,7 +41,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Faturamento"
+                "Property": "Qtde Venda"
               }
             },
             "direction": "Descending"
@@ -71,20 +51,13 @@
       }
     },
     "objects": {
-      "legend": [
+      "labels": [
         {
           "properties": {
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "28D"
                 }
               }
             }

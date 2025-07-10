@@ -1,21 +1,116 @@
 table Medidas
 	lineageTag: 8714e66e-a7e8-4f65-95dd-41d8bee6af7d
 
-	measure faturamento = ```
+	measure Faturamento = ```
 			
 			SUMX(
 			    fVendas,
 			    fVendas[Quantidade] * fVendas[Preço Unitário] 
 			)
 			```
-		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Medidas Base
 		lineageTag: 628db457-6eca-4814-af94-655f56bb2777
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Qtde Venda' = DISTINCTCOUNT( fVendas[Venda_ID] )
 		formatString: 0
+		displayFolder: Medidas Base
 		lineageTag: 78d7a339-46ed-4648-88df-6a66c397a565
+
+	measure 'Ticket médio' = DIVIDE( [Faturamento] , [Qtde Venda] )
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Medidas Base
+		lineageTag: 0c9a3642-1b3c-46e1-aa6f-6140f87e9833
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Top 5 Principais Produtos' = 1
+		formatString: 0
+		displayFolder: Medidas Base
+		lineageTag: d2a9f120-b150-43e9-83be-6d96fab9beac
+
+	measure 'Rank Produto' = ```
+			
+			RANKX( 
+			    ALLSELECTED( fVendas[proNome] ) ,
+			   [Faturamento]  , , DESC
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Medidas Base
+		lineageTag: 8093e7d4-bde6-44c2-a640-92d509f750a9
+
+	measure 'Faturamento YoY' = ```
+			
+			
+			VAR _anoAnterio = CALCULATE(
+			    [Faturamento] ,
+			    SAMEPERIODLASTYEAR( dCalendario[Date] )
+			)
+			
+			VAR _resultado = 
+			IF(
+			_anoAnterio
+			<> BLANK() , 
+			_anoAnterio
+			,
+			0
+			)
+			
+			RETURN _resultado
+			
+			```
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		displayFolder: Ano Anterior
+		lineageTag: c599c66e-b627-4007-b9b6-e2a49b4ace5f
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Qtde Venda YoY' = ```
+			
+			
+			VAR _anoAnterio = CALCULATE(
+			    [Qtde Venda] ,
+			    PREVIOUSYEAR( dCalendario[Date] )
+			)
+			
+			VAR _resultado = 
+			IF(
+			_anoAnterio
+			<> BLANK() , 
+			_anoAnterio
+			,
+			0
+			)
+			
+			RETURN _resultado
+			```
+		formatString: 0
+		displayFolder: Ano Anterior
+		lineageTag: f1f168a0-adf7-4c86-9bdc-0962d79a8a1a
+
+	measure 'Rank Vendores' = ```
+			
+			RANKX( 
+			    ALLSELECTED( dVendedor[Nome] ) ,
+			   [Faturamento]  , , DESC
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Medidas Base
+		lineageTag: 5c5c2de3-f84b-4829-99eb-d63bbc0015ca
+
+	measure 'formatação Maior Faturamento' =
+			
+			
+			1
+		formatString: 0
+		displayFolder: Formatação
+		lineageTag: 493fdc99-d88a-4e54-8004-1b65c155e615
 
 	column 'Coluna 1'
 		dataType: string

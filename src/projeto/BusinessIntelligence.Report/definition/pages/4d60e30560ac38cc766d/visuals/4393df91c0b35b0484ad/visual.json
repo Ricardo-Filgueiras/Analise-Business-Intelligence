@@ -1,33 +1,39 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "667f5d248b8e38040505",
+  "name": "4393df91c0b35b0484ad",
   "position": {
-    "x": 32.238805970149251,
-    "y": 143.28358208955223,
-    "z": 4,
-    "height": 196.11940298507463,
-    "width": 272.23880597014926
+    "x": 83,
+    "y": 269,
+    "z": 2000,
+    "height": 198,
+    "width": 489,
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dHora"
+                      "Entity": "dLojas"
                     }
                   },
-                  "Property": "Período Ordem"
+                  "Property": "Nome"
                 }
               },
-              "queryRef": "dHora.Período Ordem",
-              "nativeQueryRef": "Período Ordem"
-            },
+              "queryRef": "dLojas.Nome",
+              "nativeQueryRef": "Nome",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -39,8 +45,8 @@
                   "Property": "Faturamento"
                 }
               },
-              "queryRef": "Medidas.faturamento",
-              "nativeQueryRef": "faturamento"
+              "queryRef": "Medidas.Faturamento",
+              "nativeQueryRef": "Faturamento"
             }
           ]
         }
@@ -60,41 +66,25 @@
             },
             "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "574a095c003935820423",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dHora"
-              }
-            },
-            "Property": "Período Ordem"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e367ef99ba1410de036e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

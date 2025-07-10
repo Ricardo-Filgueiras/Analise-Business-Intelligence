@@ -96,6 +96,12 @@ table fVendas
 
 		annotation UnderlyingDateTimeDataType = Time
 
+	column proNome = RELATED( dProdutos[Nome] )
+		lineageTag: 9b25b207-d48e-435b-9a95-c0dd85105a53
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fVendas = m
 		mode: import
 		queryGroup: Fatos

@@ -74,6 +74,7 @@ table dVendedor
 	column Imagem
 		dataType: string
 		lineageTag: fb0ce736-6708-4243-a934-193c9c098913
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Imagem
 

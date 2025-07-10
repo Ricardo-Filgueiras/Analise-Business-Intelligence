@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "15d270ce2e44c01e9a02",
+  "name": "487bd87eca9b013d46e0",
   "position": {
-    "x": 0,
-    "y": 439.70149253731341,
-    "z": 8,
-    "height": 97.611940298507463,
-    "width": 526.56716417910445,
-    "tabOrder": 1
+    "x": 941,
+    "y": 96,
+    "z": 1000,
+    "height": 436,
+    "width": 320,
+    "tabOrder": 2000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "map",
     "query": {
       "queryState": {
         "Category": {
@@ -20,19 +20,19 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dClientes"
+                      "Entity": "dLojas"
                     }
                   },
-                  "Property": "Género"
+                  "Property": "Cidade"
                 }
               },
-              "queryRef": "dClientes.Género",
-              "nativeQueryRef": "Género",
+              "queryRef": "dLojas.Cidade",
+              "nativeQueryRef": "Cidade",
               "active": true
             }
           ]
         },
-        "Y": {
+        "Size": {
           "projections": [
             {
               "field": {
@@ -46,45 +46,20 @@
                 }
               },
               "queryRef": "Medidas.faturamento",
-              "nativeQueryRef": "faturamento"
+              "nativeQueryRef": "Faturamento"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "Faturamento"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
-      "legend": [
+      "mapStyles": [
         {
           "properties": {
-            "showTitle": {
+            "mapTheme": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
+                  "Value": "'canvasLight'"
                 }
               }
             }
