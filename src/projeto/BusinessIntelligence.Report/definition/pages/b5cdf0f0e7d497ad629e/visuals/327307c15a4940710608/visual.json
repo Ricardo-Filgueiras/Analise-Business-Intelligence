@@ -6,7 +6,8 @@
     "y": 43.880597014925371,
     "z": 0,
     "height": 103.88059701492537,
-    "width": 272.23880597014926
+    "width": 272.23880597014926,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "tableEx",
@@ -47,37 +48,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a77baf05540145cc9606",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fVendas"
-              }
-            },
-            "Property": "Canal de Venda"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ef76c4320d108000814a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,9 +4,10 @@
   "position": {
     "x": 32.238805970149251,
     "y": 143.28358208955223,
-    "z": 4,
+    "z": 4000,
     "height": 196.11940298507463,
-    "width": 272.23880597014926
+    "width": 272.23880597014926,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "tableEx",
@@ -64,37 +65,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "574a095c003935820423",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dHora"
-              }
-            },
-            "Property": "Período Ordem"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e367ef99ba1410de036e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

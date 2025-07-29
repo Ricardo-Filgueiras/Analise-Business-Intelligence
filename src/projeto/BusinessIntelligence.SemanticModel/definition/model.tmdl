@@ -32,6 +32,7 @@ ref table fDevolucoes
 ref table dClientes
 ref table dLojas
 ref table dProdutos
+ref table Parametro
 
 ref cultureInfo pt-BR
 

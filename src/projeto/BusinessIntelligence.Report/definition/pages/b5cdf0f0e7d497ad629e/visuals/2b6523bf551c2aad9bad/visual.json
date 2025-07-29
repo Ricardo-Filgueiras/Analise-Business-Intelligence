@@ -4,9 +4,10 @@
   "position": {
     "x": 1142.2222222222222,
     "y": 15.555555555555555,
-    "z": 1,
+    "z": 1000,
     "height": 687.77777777777771,
-    "width": 108.88888888888889
+    "width": 108.88888888888889,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -62,23 +63,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "02aad8191008ce269d5a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendario"
-              }
-            },
-            "Property": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

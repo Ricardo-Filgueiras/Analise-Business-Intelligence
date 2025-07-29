@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 439.70149253731341,
-    "z": 8,
+    "z": 8000,
     "height": 97.611940298507463,
     "width": 526.56716417910445,
-    "tabOrder": 1
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "pieChart",

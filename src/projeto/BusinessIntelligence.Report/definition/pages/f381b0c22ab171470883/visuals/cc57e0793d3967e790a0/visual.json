@@ -6,7 +6,8 @@
     "y": 83,
     "z": 0,
     "height": 391,
-    "width": 320
+    "width": 320,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "map",

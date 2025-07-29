@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 252,
     "width": 341,
-    "tabOrder": 1
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
@@ -255,34 +255,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "8a0b6807a04be0e4473e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "04c85f1b4ec3bd2084c5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dVendedor"
-              }
-            },
-            "Property": "Imagem"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

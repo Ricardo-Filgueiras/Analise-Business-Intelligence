@@ -4,9 +4,10 @@
   "position": {
     "x": 304.47761194029852,
     "y": 236.41791044776119,
-    "z": 2,
+    "z": 2000,
     "height": 205.07462686567163,
-    "width": 654.62686567164178
+    "width": 654.62686567164178,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -69,37 +70,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6ff41de9227602b3a860",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "75ae32d505750a079091",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendario"
-              }
-            },
-            "Property": "Nome do Mes"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

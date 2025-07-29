@@ -4,9 +4,10 @@
   "position": {
     "x": 304.47761194029852,
     "y": 43.880597014925371,
-    "z": 5,
+    "z": 5000,
     "height": 190.74626865671641,
-    "width": 282.08955223880594
+    "width": 282.08955223880594,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -47,37 +48,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8bee9a5eebe8a5e0618e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendario"
-              }
-            },
-            "Property": "DiaSemana"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9b7aac9ec5c81e04305d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Faturamento"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

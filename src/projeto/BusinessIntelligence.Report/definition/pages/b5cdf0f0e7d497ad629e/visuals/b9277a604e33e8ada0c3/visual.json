@@ -4,9 +4,10 @@
   "position": {
     "x": 959.1044776119403,
     "y": 16.119402985074625,
-    "z": 3,
+    "z": 3000,
     "height": 686.865671641791,
-    "width": 183.58208955223881
+    "width": 183.58208955223881,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -149,23 +150,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cebbb9d087c0eea08327",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dHora"
-              }
-            },
-            "Property": "Hora Num"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

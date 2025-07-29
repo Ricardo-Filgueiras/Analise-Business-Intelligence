@@ -40,6 +40,9 @@
       }
     ]
   },
+  "publicCustomVisuals": [
+    "InforiverFilterF39DAE8D57A743EF89F5C3809DEE2B69"
+  ],
   "resourcePackages": [
     {
       "name": "SharedResources",
@@ -54,6 +57,17 @@
           "name": "Divergent",
           "path": "BuiltInThemes/Divergent.json",
           "type": "CustomTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "img237171374831350845.svg",
+          "path": "img237171374831350845.svg",
+          "type": "Image"
         }
       ]
     }
